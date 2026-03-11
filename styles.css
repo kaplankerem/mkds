@@ -254,8 +254,9 @@ h2 {
 }
 
 .media-cta {
-  display: inline-block;
-  margin-top: 1rem;
+  display: block;
+  width: fit-content;
+  margin: 1.35rem auto 0;
 }
 
 .media-tile {

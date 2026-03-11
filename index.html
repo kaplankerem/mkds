@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MKDS | Official Website</title>
+    <meta
+      name="description"
+      content="MKDS resmî web sitesi. Senfonik Rock, Metal ve Gothic Rock sound'unu modern, lüks ve minimalist bir estetikle keşfedin. Güncel release: Gölgelerin Kalbinde."
+    />
+    <meta property="og:title" content="MKDS | Official Website" />
+    <meta
+      property="og:description"
+      content="Kerem Kaplan ve Selin Kaplan'dan oluşan MKDS'nin resmî web sitesi."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-noise" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="MKDS Ana Sayfa">MKDS</a>
+      <button class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false">Menü</button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#about">Grup</a>
+        <a href="#music">Müzik</a>
+        <a href="#media">Medya</a>
+        <a href="#news">Duyurular</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <h1>MKDS</h1>
+        <p class="intro">
+          MKDS, duygusal hikâye anlatımını kaotik melodilerle buluşturan bir
+          müzik yolculuğunun ürünüdür. Selin ve Kerem Kaplan'ın ortak
+          vizyonuyla doğan proje, geleneksel kökleri senfonik ögelerle bir
+          araya getirir.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#music" data-scroll="center">Dinlemeye Başla</a>
+          <a class="btn btn-ghost" href="#news">Son Duyurular</a>
+        </div>
+        <div class="stream-links">
+          <a
+            class="btn btn-ghost"
+            href="https://open.spotify.com/artist/7FyP5l0zH3TikS6r4cDyst"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Spotify</a
+          >
+          <a
+            class="btn btn-ghost"
+            href="https://www.youtube.com/@MKDSresmi"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YouTube</a
+          >
+        </div>
+      </section>
+
+      <section id="about" class="section section-about">
+        <div class="section-head">
+          <p class="kicker">Grup</p>
+          <h2>MKDS Üyeleri</h2>
+        </div>
+        <div class="members-grid">
+          <article class="member-card">
+            <h3>Selin Kaplan</h3>
+            <p class="role">Vokal</p>
+          </article>
+          <article class="member-card">
+            <h3>Kerem Kaplan</h3>
+            <p class="role">Gitar</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="music" class="section section-music">
+        <div class="section-head">
+          <p class="kicker">Dinle</p>
+          <p class="statline">
+            Öne Çıkan Release: Gölgelerin Kalbinde (2025)
+          </p>
+        </div>
+
+        <div class="players-grid">
+          <article class="player-card">
+            <h3>Spotify</h3>
+            <iframe
+              title="MKDS Spotify Player"
+              src="https://open.spotify.com/embed/artist/7FyP5l0zH3TikS6r4cDyst?utm_source=generator"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </article>
+
+          <article class="player-card">
+            <h3>Lyric Video</h3>
+            <iframe
+              title="MKDS YouTube Video Oynatıcı"
+              src="https://www.youtube.com/embed/zkQ07N_m800?rel=0&modestbranding=1&playsinline=1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              loading="lazy"
+            ></iframe>
+            <p class="player-note">
+              Oynatıcı açılmazsa videoyu YouTube'da açın:
+              <a
+                href="https://youtu.be/zkQ07N_m800?si=PoK_KjJR5RHM0DH9"
+                target="_blank"
+                rel="noopener noreferrer"
+                >MKDS - Gölgelerin Kalbinde</a
+              >
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="media" class="section section-media">
+        <div class="section-head">
+          <p class="kicker">Görseller</p>
+          <h2>Fotoğraf Galerisi</h2>
+        </div>
+        <div class="gallery-grid" aria-label="MKDS görsel galerisi">
+          <figure class="media-tile"><figcaption>Live Session I</figcaption></figure>
+          <figure class="media-tile"><figcaption>Studio Frame II</figcaption></figure>
+          <figure class="media-tile"><figcaption>Backstage III</figcaption></figure>
+        </div>
+      </section>
+
+      <section id="news" class="section section-news">
+        <div class="section-head">
+          <p class="kicker">Güncellemeler</p>
+          <h2>Duyurular</h2>
+        </div>
+        <div class="news-list" id="news-list"></div>
+      </section>
+
+      <section id="contact" class="section section-contact">
+        <div class="section-head">
+          <p class="kicker">Bağlantılar</p>
+          <h2>İletişim ve Abonelik</h2>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>E-posta Aboneliği</h3>
+            <p>Yeni yayınlar ve duyurular için e-posta listemize katılın.</p>
+            <form id="subscribe-form" novalidate>
+              <label for="email">E-posta</label>
+              <div class="field-row">
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="örnek@email.com"
+                  required
+                />
+                <button type="submit" class="btn btn-primary">Abone Ol</button>
+              </div>
+              <p id="form-feedback" aria-live="polite"></p>
+            </form>
+          </article>
+
+          <article class="contact-card">
+            <h3>Sosyal Medya</h3>
+            <p>MKDS'i sosyal platformlarda takip edin.</p>
+            <ul class="social-list">
+              <li>
+                <a
+                  href="https://www.youtube.com/@MKDSresmi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  >YouTube</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://open.spotify.com/artist/7FyP5l0zH3TikS6r4cDyst"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Spotify"
+                  >Spotify</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://tiktok.com/@mkdsresmi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                  >TikTok</a
+                >
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 MKDS. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -9,6 +9,7 @@
   --accent-2: #d8c29a;
   --danger: #d36363;
   --success: #7ab67a;
+  --hero-banner-ratio: 1.506;
 }
 
 * {
@@ -99,12 +100,12 @@ main {
 }
 
 .hero {
-  min-height: 84vh;
+  min-height: calc(100vw / var(--hero-banner-ratio));
   display: flex;
   align-items: center;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding: 2.8rem 0 1.8rem;
+  padding: clamp(1.2rem, 3vw, 2.8rem) 0 1.8rem;
   position: relative;
   overflow: hidden;
 }
@@ -123,7 +124,7 @@ main {
   z-index: 0;
   background:
     linear-gradient(115deg, rgba(8, 8, 8, 0.78), rgba(8, 8, 8, 0.4)),
-    url("assets/images/banner.png") center center / cover no-repeat;
+    url("assets/images/banner.png") center top / 100% auto no-repeat;
 }
 
 .hero > * {
@@ -208,16 +209,6 @@ h2 {
 
 .hero-presave-text p {
   margin: 0;
-}
-
-.countdown-row {
-  color: var(--accent-2);
-  font-family: "Cinzel", serif;
-  letter-spacing: 0.02rem;
-}
-
-#hero-release-countdown {
-  font-weight: 700;
 }
 
 .hero-presave .btn {
@@ -396,8 +387,9 @@ h2 {
 }
 
 .single-highlight img {
-  width: 100%;
-  max-width: 420px;
+  width: min(100%, 220px);
+  aspect-ratio: 1 / 1;
+  height: auto;
   justify-self: center;
   object-fit: cover;
   border: 1px solid var(--line);
@@ -537,12 +529,12 @@ input[type="email"] {
   }
 
   .single-highlight {
-    grid-template-columns: minmax(260px, 360px) 1fr;
+    grid-template-columns: minmax(180px, 240px) 1fr;
     align-items: center;
   }
 
   .single-highlight img {
-    max-width: none;
+    justify-self: start;
   }
 
   .field-row {

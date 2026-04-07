@@ -103,7 +103,20 @@ main {
   display: grid;
   align-content: center;
   gap: 0.8rem;
-  padding: 2.8rem 0 1.8rem;
+  padding: 2.8rem 1.2rem 1.8rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(120deg, rgba(8, 8, 8, 0.72), rgba(8, 8, 8, 0.46)),
+    url("assets/images/banner.png") center 32% / cover no-repeat;
 }
 
 .kicker {
@@ -214,6 +227,14 @@ h2 {
   padding: 1rem;
 }
 
+.member-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  margin-bottom: 0.7rem;
+}
+
 .role {
   color: var(--accent-2);
   margin: 0.35rem 0 0.5rem;
@@ -260,17 +281,24 @@ h2 {
 }
 
 .media-tile {
-  min-height: 180px;
-  display: grid;
-  align-content: end;
-  background:
-    linear-gradient(180deg, rgba(10, 10, 10, 0.1), rgba(10, 10, 10, 0.8)),
-    linear-gradient(120deg, rgba(176, 139, 87, 0.3), rgba(255, 255, 255, 0.03));
+  min-height: 0;
+  display: block;
+  overflow: hidden;
+  background: var(--panel);
+  padding: 0;
+}
+
+.media-tile img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
 }
 
 .media-tile figcaption {
   font-family: "Cinzel", serif;
   letter-spacing: 0.05rem;
+  padding: 0.75rem 0.9rem;
 }
 
 .news-list {
@@ -347,18 +375,20 @@ input[type="email"] {
   margin: 0;
   border: 1px solid var(--line);
   background: var(--panel);
-  min-height: 220px;
-  display: grid;
-  align-content: end;
-  padding: 1rem;
-  background-image:
-    linear-gradient(180deg, rgba(10, 10, 10, 0.12), rgba(10, 10, 10, 0.78)),
-    linear-gradient(125deg, rgba(176, 139, 87, 0.32), rgba(255, 255, 255, 0.03));
+  overflow: hidden;
+}
+
+.gallery-photo img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
 }
 
 .gallery-photo figcaption {
   font-family: "Cinzel", serif;
   letter-spacing: 0.05rem;
+  padding: 0.8rem 0.9rem;
 }
 
 @media (min-width: 760px) {

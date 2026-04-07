@@ -10,6 +10,8 @@
   --danger: #d36363;
   --success: #7ab67a;
   --hero-banner-ratio: 1.506;
+  --hero-min-height: 320px;
+  --hero-max-height: 840px;
 }
 
 * {
@@ -20,6 +22,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 20% 20%, rgba(176, 139, 87, 0.2), transparent 45%),
     radial-gradient(circle at 80% 0%, rgba(120, 120, 120, 0.2), transparent 40%),
@@ -95,16 +98,25 @@ body {
 }
 
 main {
+  width: 100%;
+  margin: 0;
+}
+
+main > .section:not(.hero) {
   width: min(1100px, 92%);
   margin: 0 auto;
 }
 
 .hero {
-  min-height: calc(100vw / var(--hero-banner-ratio));
+  min-height: clamp(
+    var(--hero-min-height),
+    calc(100vw / var(--hero-banner-ratio)),
+    var(--hero-max-height)
+  );
   display: flex;
   align-items: center;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: 100%;
+  margin-left: 0;
   padding: clamp(1.2rem, 3vw, 2.8rem) 0 1.8rem;
   position: relative;
   overflow: hidden;

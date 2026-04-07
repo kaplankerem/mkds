@@ -25,7 +25,50 @@ if (centeredScrollCta) {
   });
 }
 
+const heroReleaseCountdown = document.getElementById('hero-release-countdown');
+
+if (heroReleaseCountdown) {
+  const releaseDateRaw = heroReleaseCountdown.getAttribute('data-release-date');
+  const releaseDate = releaseDateRaw ? new Date(releaseDateRaw) : null;
+
+  const updateReleaseCountdown = () => {
+    if (!releaseDate || Number.isNaN(releaseDate.getTime())) {
+      heroReleaseCountdown.textContent = 'tarih bekleniyor';
+      return;
+    }
+
+    const diffMs = releaseDate.getTime() - Date.now();
+
+    if (diffMs <= 0) {
+      heroReleaseCountdown.textContent = 'şimdi yayında';
+      return;
+    }
+
+    const totalMinutes = Math.floor(diffMs / (1000 * 60));
+    const days = Math.floor(totalMinutes / (60 * 24));
+    const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
+    const minutes = totalMinutes % 60;
+
+    heroReleaseCountdown.textContent = `${days} gün ${hours} saat ${minutes} dk`;
+  };
+
+  updateReleaseCountdown();
+  const countdownTimer = setInterval(() => {
+    updateReleaseCountdown();
+    if (releaseDate && Date.now() >= releaseDate.getTime()) {
+      clearInterval(countdownTimer);
+    }
+  }, 30000);
+}
+
 const announcements = [
+  {
+    date: '2026-04-24',
+    title: 'MKDS - Anılarım Bensiz 24 Nisan'da yayında',
+    text: 'Yeni single tüm dijital platformlarda yayında olacak. Çıkış öncesi pre-save bağlantısıyla ön kayıt yapabilirsiniz.',
+    linkUrl: 'https://distrokid.com/hyperfollow/mkds/anlarm-bensiz',
+    linkLabel: 'Pre-save Linki'
+  },
   {
     date: '2025-11-28',
     title: 'Gölgelerin Kalbinde yayında',
@@ -69,6 +112,17 @@ if (newsList) {
     text.textContent = item.text;
 
     article.append(time, title, text);
+
+    if (item.linkUrl) {
+      const link = document.createElement('a');
+      link.href = item.linkUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.className = 'news-link';
+      link.textContent = item.linkLabel || 'Detayı Gör';
+      article.append(link);
+    }
+
     newsList.append(article);
   });
 }

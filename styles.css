@@ -99,24 +99,36 @@ main {
 }
 
 .hero {
-  min-height: 82vh;
-  display: grid;
-  align-content: center;
-  gap: 0.8rem;
-  padding: 2.8rem 1.2rem 1.8rem;
+  min-height: 84vh;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 2.8rem 0 1.8rem;
   position: relative;
-  isolation: isolate;
   overflow: hidden;
 }
 
-.hero::before {
+.hero-content {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   background:
-    linear-gradient(120deg, rgba(8, 8, 8, 0.72), rgba(8, 8, 8, 0.46)),
-    url("assets/images/banner.png") center 32% / cover no-repeat;
+    linear-gradient(115deg, rgba(8, 8, 8, 0.78), rgba(8, 8, 8, 0.4)),
+    url("assets/images/banner.png") center center / cover no-repeat;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .kicker {
@@ -137,6 +149,7 @@ h3 {
 h1 {
   font-size: clamp(2.8rem, 8vw, 6rem);
   letter-spacing: 0.25rem;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
 h2 {
@@ -154,6 +167,7 @@ h2 {
   margin: 0;
   max-width: 620px;
   font-size: 1.15rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .hero-actions {
@@ -166,6 +180,49 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
+}
+
+.hero-presave {
+  margin-top: 0.45rem;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0.7rem;
+  align-items: center;
+  width: min(720px, 100%);
+  border: 1px solid var(--line);
+  background: rgba(10, 10, 10, 0.6);
+  padding: 0.65rem;
+}
+
+.hero-presave img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.hero-presave-text {
+  display: grid;
+  gap: 0.12rem;
+}
+
+.hero-presave-text p {
+  margin: 0;
+}
+
+.countdown-row {
+  color: var(--accent-2);
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.02rem;
+}
+
+#hero-release-countdown {
+  font-weight: 700;
+}
+
+.hero-presave .btn {
+  grid-column: 1 / -1;
+  justify-self: start;
 }
 
 .btn {
@@ -229,10 +286,19 @@ h2 {
 
 .member-photo {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: 360px;
+  object-fit: contain;
+  background: rgba(5, 5, 5, 0.55);
   border: 1px solid var(--line);
   margin-bottom: 0.7rem;
+}
+
+.member-photo-selin {
+  object-position: center top;
+}
+
+.member-photo-kerem {
+  object-position: center top;
 }
 
 .role {
@@ -257,7 +323,7 @@ h2 {
 }
 
 .gallery-grid {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .media-link {
@@ -290,8 +356,9 @@ h2 {
 
 .media-tile img {
   width: 100%;
-  height: 210px;
-  object-fit: cover;
+  height: 240px;
+  object-fit: contain;
+  background: rgba(5, 5, 5, 0.55);
   display: block;
 }
 
@@ -304,11 +371,41 @@ h2 {
 .news-list {
   display: grid;
   gap: 0.8rem;
+  margin-top: 1rem;
 }
 
 .news-item time {
   color: var(--accent-2);
   font-family: "Cinzel", serif;
+}
+
+.news-link {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: var(--accent-2);
+  font-family: "Cinzel", serif;
+  text-decoration: none;
+}
+
+.single-highlight {
+  display: grid;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 1rem;
+}
+
+.single-highlight img {
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.single-highlight-content {
+  display: grid;
+  gap: 0.7rem;
 }
 
 .field-row {
@@ -380,8 +477,9 @@ input[type="email"] {
 
 .gallery-photo img {
   width: 100%;
-  height: 280px;
-  object-fit: cover;
+  height: 360px;
+  object-fit: contain;
+  background: rgba(5, 5, 5, 0.55);
   display: block;
 }
 
@@ -417,12 +515,34 @@ input[type="email"] {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .hero-presave {
+    grid-template-columns: 64px 1fr auto;
+  }
+
+  .hero-presave img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .hero-presave .btn {
+    grid-column: auto;
+  }
+
   .gallery-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .gallery-page-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .single-highlight {
+    grid-template-columns: minmax(260px, 360px) 1fr;
+    align-items: center;
+  }
+
+  .single-highlight img {
+    max-width: none;
   }
 
   .field-row {

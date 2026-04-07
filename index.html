@@ -39,32 +39,58 @@
 
     <main>
       <section id="home" class="hero">
-        <h1>MKDS</h1>
-        <p class="intro">
-          MKDS, duygusal hikâye anlatımını kaotik melodilerle buluşturan bir
-          müzik yolculuğunun ürünüdür. Selin ve Kerem Kaplan'ın ortak
-          vizyonuyla doğan proje, geleneksel kökleri senfonik ögelerle bir
-          araya getirir.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#music" data-scroll="center">Dinlemeye Başla</a>
-          <a class="btn btn-ghost" href="#news">Son Duyurular</a>
-        </div>
-        <div class="stream-links">
-          <a
-            class="btn btn-ghost"
-            href="https://open.spotify.com/artist/7FyP5l0zH3TikS6r4cDyst"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Spotify</a
-          >
-          <a
-            class="btn btn-ghost"
-            href="https://www.youtube.com/@MKDSresmi"
-            target="_blank"
-            rel="noopener noreferrer"
-            >YouTube</a
-          >
+        <div class="hero-content">
+          <h1>MKDS</h1>
+          <p class="intro">
+            MKDS, duygusal hikâye anlatımını kaotik melodilerle buluşturan bir
+            müzik yolculuğunun ürünüdür. Selin ve Kerem Kaplan'ın ortak
+            vizyonuyla doğan proje, geleneksel kökleri senfonik ögelerle bir
+            araya getirir.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#music" data-scroll="center">Dinlemeye Başla</a>
+            <a class="btn btn-ghost" href="#news">Son Duyurular</a>
+          </div>
+          <div class="stream-links">
+            <a
+              class="btn btn-ghost"
+              href="https://open.spotify.com/artist/7FyP5l0zH3TikS6r4cDyst"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Spotify</a
+            >
+            <a
+              class="btn btn-ghost"
+              href="https://www.youtube.com/@MKDSresmi"
+              target="_blank"
+              rel="noopener noreferrer"
+              >YouTube</a
+            >
+          </div>
+          <div class="hero-presave" aria-label="Anılarım Bensiz pre-save çağrısı">
+            <img
+              src="assets/images/anilarim-bensiz-cover.png"
+              alt="MKDS - Anılarım Bensiz kapak görseli"
+              loading="lazy"
+            />
+            <div class="hero-presave-text">
+              <p>Yeni single: <strong>MKDS - Anılarım Bensiz</strong></p>
+              <p>24 Nisan'da yayında • Şimdi pre-save yap</p>
+              <p class="countdown-row">
+                Yayına kalan süre:
+                <span id="hero-release-countdown" data-release-date="2026-04-24T00:00:00+03:00"
+                  >hesaplanıyor...</span
+                >
+              </p>
+            </div>
+            <a
+              class="btn btn-primary"
+              href="https://distrokid.com/hyperfollow/mkds/anlarm-bensiz"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Pre-save</a
+            >
+          </div>
         </div>
       </section>
 
@@ -76,7 +102,7 @@
         <div class="members-grid">
           <article class="member-card">
             <img
-              class="member-photo"
+              class="member-photo member-photo-selin"
               src="assets/images/selin-kaplan.png"
               alt="Selin Kaplan"
               loading="lazy"
@@ -86,7 +112,7 @@
           </article>
           <article class="member-card">
             <img
-              class="member-photo"
+              class="member-photo member-photo-kerem"
               src="assets/images/kerem-kaplan.png"
               alt="Kerem Kaplan"
               loading="lazy"
@@ -146,19 +172,11 @@
           <a class="media-link" href="gallery.html" aria-label="Fotoğraf galerisine git">
             <figure class="media-tile">
               <img src="assets/images/group-1.png" alt="MKDS grup fotoğrafı 1" loading="lazy" />
-              <figcaption>Grup Fotoğrafı I</figcaption>
             </figure>
           </a>
           <a class="media-link" href="gallery.html" aria-label="Fotoğraf galerisine git">
             <figure class="media-tile">
               <img src="assets/images/group-2.png" alt="MKDS grup fotoğrafı 2" loading="lazy" />
-              <figcaption>Grup Fotoğrafı II</figcaption>
-            </figure>
-          </a>
-          <a class="media-link" href="gallery.html" aria-label="Fotoğraf galerisine git">
-            <figure class="media-tile">
-              <img src="assets/images/banner.png" alt="MKDS banner fotoğrafı" loading="lazy" />
-              <figcaption>Banner Kare</figcaption>
             </figure>
           </a>
         </div>
@@ -170,6 +188,28 @@
           <p class="kicker">Güncellemeler</p>
           <h2>Duyurular</h2>
         </div>
+        <article class="single-highlight" aria-label="Yeni single duyurusu">
+          <img
+            src="assets/images/anilarim-bensiz-cover.png"
+            alt="MKDS - Anılarım Bensiz single kapak fotoğrafı"
+            loading="lazy"
+          />
+          <div class="single-highlight-content">
+            <p class="kicker">Yeni Single</p>
+            <h3>MKDS - Anılarım Bensiz</h3>
+            <p>
+              24 Nisan'da tüm dijital platformlarda yayında. Şimdiden ön kayıt
+              yaparak çıkış günü parçayı ilk dinleyenlerden olun.
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://distrokid.com/hyperfollow/mkds/anlarm-bensiz"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Pre-save Yap</a
+            >
+          </div>
+        </article>
         <div class="news-list" id="news-list"></div>
       </section>
 

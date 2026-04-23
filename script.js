@@ -28,10 +28,10 @@ if (centeredScrollCta) {
 const announcements = [
   {
     date: '2026-04-24',
-    title: "MKDS - Anılarım Bensiz 24 Nisan'da yayında",
-    text: 'Yeni single tüm dijital platformlarda yayında olacak. Çıkış öncesi pre-save bağlantısıyla ön kayıt yapabilirsiniz.',
-    linkUrl: 'https://distrokid.com/hyperfollow/mkds/anlarm-bensiz',
-    linkLabel: 'Pre-save Linki'
+    title: 'MKDS - Anılarım Bensiz yayında!',
+    text: 'Yeni single Anılarım Bensiz tüm dijital platformlarda yayında. Hemen dinleyin!',
+    linkUrl: 'https://open.spotify.com/track/3LbDr4lvkzxyift2mnecMO',
+    linkLabel: 'Spotify\'da Dinle'
   },
   {
     date: '2025-11-28',
